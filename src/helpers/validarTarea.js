@@ -2,7 +2,7 @@ import { check } from "express-validator";
 import resultadoValidacion from "./resultadoValidacion";
 
 export const  validarTarea =     [
-    check("nombreReceta")
+    check("tarea")
       .notEmpty()
       .withMessage("El nombre de la tarea es obligatorio")
       .isLength({min:2,max:100})
