@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import path from "path"
 import 'dotenv/config'
 import './src/database/dbConnection'
+import tareasRouter from "./src/routes/tareas.routes"
 
 const app = express();
 
@@ -18,3 +19,5 @@ app.use(express.json());
 app.use(morgan('dev'));
 console.log(path.join(__dirname,'/public'));
 app.use(express.static(path.join(__dirname,'/public')))
+
+app.use("/apitareas", tareasRouter)
