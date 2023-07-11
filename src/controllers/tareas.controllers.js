@@ -18,7 +18,7 @@ export const obtenerTareas = async (req, res) => {
 
 export const crearTarea = async (req, res) => {
     try {
-        // console.log(req.body);
+        
         const tareaNueva = new Tarea(req.body);
         await tareaNueva.save();
         res.status(201).json({
